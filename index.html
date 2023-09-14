@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Forex Graph</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="controls">
+        <label for="centerForce">Center Force:</label>
+        <input type="range" id="centerForce" min="0" max="2" step="0.1" value="0.05">
+        <span id="centerForceValue">0.05</span>
+
+        <br>
+
+        <label for="repelForce">Repel Force:</label>
+        <input type="range" id="repelForce" min="0" max="200" step="1" value="30">
+        <span id="repelForceValue">30</span>
+
+        <br>
+
+        <label for="linkDistance">Link Distance:</label>
+        <input type="range" id="linkDistance" min="0" max="1000" step="1" value="500">
+        <span id="linkDistanceValue">500</span>
+
+        <br>
+
+    </div>
+
+    <div id="graph-container">
+    </div>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

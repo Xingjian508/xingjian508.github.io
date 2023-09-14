@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#controls {
+    margin: 50px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    background-color: white;
+    z-index: 2;
+}
+
+#controls label {
+    margin-right: 10px;
+}
+
+#graph-container {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 0px);
+    margin: 0;
+}
+
+.node {
+    fill: blue;
+    cursor: pointer;
+    stroke: none;
+    stroke-width: 2px;
+}
+
+.node:hover {
+    stroke: red;
+}
+
+.link {
+    stroke: #ccc;
+    stroke-width: 2px;
+    fill: none;
+    pointer-events: stroke;
+    cursor: pointer;
+}
+
+.link:hover {
+    stroke: red;
+}
+
+.link-label {
+    font-size: 12px;
+    fill: black;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.edge-label {
+    font-size: 12px;
+    text-anchor: middle;
+    fill: black;
+    pointer-events: none;
+}
+
+.node-text {
+    font-size: 12px;
+    text-anchor: middle;
+    fill: white;
+    pointer-events: none;
+}
+
