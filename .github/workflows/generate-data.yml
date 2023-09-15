@@ -23,7 +23,7 @@ jobs:
     - name: Run Python script
       env:
         GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-      run: python3 src/main.py
+      run: python3 pysrc/main.py
 
     - name: Commit and push if changes were made
       run: |
