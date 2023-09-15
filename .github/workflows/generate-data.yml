@@ -15,13 +15,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.x  # Replace 'x' with the desired Python version
+          python-version: 3.7
 
       - name: Install requests
         run: pip install requests
 
       - name: Run Python script
-        run: python3 pysrc/main.py  # Adjust the path to your main.py file
+        run: python3 pysrc/main.py
 
       - name: Commit and push changes
         run: |
@@ -29,5 +29,8 @@ jobs:
           git config --global user.email "xingjiw4@uci.edu"
           git add .
           git commit -m "Update Data"
-          git push
+          git push origin main
+        
+        env:
+          GITHUB_PAT: ${{ secrets.FOREX_WEBSITE }}
 
