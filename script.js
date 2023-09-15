@@ -10,37 +10,15 @@ const nodesData = [
     { id: 'CAD', size: node_size, text: 'CAD' },
     { id: 'CHF', size: node_size, text: 'CHF' },
     { id: 'SGD', size: node_size, text: 'SGD' },
-//     { id: 'HKD', size: node_size, text: 'HKD' }
+    { id: 'HKD', size: node_size, text: 'HKD' }
 ];
 
 const links = [];
-// for (let i = 0; i < nodesData.length; i++) {
-//     for (let j = i + 1; j < nodesData.length; j++) {
-//         links.push({ source: nodesData[i].id, target: nodesData[j].id });
-//     }
-// }
-
-
-asdfasdfsa
-
-console.log("YO")
-const fs = require('fs');
-const path = require('path');
-
-const ratesData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'rates.json')));
-
-nodesData.forEach(node1 => nodesData.forEach(node2 => {
-  if (node1.id !== node2.id && ratesData[node1.id] && ratesData[node1.id][node2.id]) {
-    links.push({ source: node1.id, target: node2.id, value: ratesData[node1.id][node2.id] });
-  }
-}));
-
-console.log(links);
-
-
-
-
-
+for (let i = 0; i < nodesData.length; i++) {
+    for (let j = i + 1; j < nodesData.length; j++) {
+        links.push({ source: nodesData[i].id, target: nodesData[j].id });
+    }
+}
 
 const svg = d3.select("#graph-container")
     .append("svg")
@@ -164,3 +142,4 @@ function updateForces() {
     simulation.force("link", d3.forceLink(links).id(d => d.id).distance(linkDistance));
     simulation.alpha(1).restart();
 }
+
