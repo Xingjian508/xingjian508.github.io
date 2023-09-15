@@ -1,32 +1,33 @@
-name: Generate Data
+name: Generate Data and Update Repository
 
 on:
   schedule:
-    - cron: "0 */3 * * *"
+    - cron: '0 */3 * * *'  # Runs every 3 hours
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
+    - name: Checkout Code
       uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.x
+        python-version: '3.x'  # Use your desired Python version (e.g., '3.8', '3.9')
 
-    - name: Install dependencies
+    - name: Install Dependencies
       run: pip install -r requirements.txt
 
-    - name: Run Python script
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-      run: python3 pysrc/main.py
+    - name: Execute Python Script
+      run: python src/main.py
 
-    - name: Commit and push if changes were made
+    - name: Commit and Push Changes
       run: |
-        git diff --exit-code || (git config user.name "Xingjian508" && git config user.email "xingjiw4@uci.edu" && git add -A && git commit -m "Update data" && git push)
-      if: success()
-it push
+        git config user.name "Xingjian508"
+        git config user.email "xingjiw4@uci.edu"
+        git add .
+        git commit -m "Update data JSON"
+        git push
+
