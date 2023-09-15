@@ -20,6 +20,29 @@ for (let i = 0; i < nodesData.length; i++) {
     }
 }
 
+
+
+
+console.log("YO")
+// const fs = require('fs');
+// const path = require('path');
+// 
+// const ratesData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'rates.json')));
+// const links = [];
+// 
+// nodesData.forEach(node1 => nodesData.forEach(node2 => {
+//   if (node1.id !== node2.id && ratesData[node1.id] && ratesData[node1.id][node2.id]) {
+//     links.push({ source: node1.id, target: node2.id, value: ratesData[node1.id][node2.id] });
+//   }
+// }));
+// 
+// console.log(links);
+
+
+
+
+
+
 const svg = d3.select("#graph-container")
     .append("svg")
     .attr("width", "100%")
@@ -142,4 +165,3 @@ function updateForces() {
     simulation.force("link", d3.forceLink(links).id(d => d.id).distance(linkDistance));
     simulation.alpha(1).restart();
 }
-
