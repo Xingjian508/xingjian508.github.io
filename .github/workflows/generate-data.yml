@@ -17,6 +17,15 @@ jobs:
         with:
           python-version: 3.x  # Replace 'x' with the desired Python version
 
+      - name: Install requests
+        run: pip install requests
+
+      - name: Install json
+        run: pip install json
+
+      - name: Install math
+        run: pip install math
+
       - name: Run Python script
         run: python3 pysrc/main.py  # Adjust the path to your main.py file
 
