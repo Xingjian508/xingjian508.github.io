@@ -69,8 +69,8 @@ fetch('data/rates.json')
                     .attr("x", (d.source.x + d.target.x) / 2)
                     .attr("y", (d.source.y + d.target.y) / 2)
                     .text(() => {
-                      const rateSourceToTarget = ratesData[d.source.id][d.target.id].toFixed(2);
-                      const rateTargetToSource = ratesData[d.target.id][d.source.id].toFixed(2);
+                      const rateSourceToTarget = ratesData[d.source.id][d.target.id].toFixed(3);
+                      const rateTargetToSource = ratesData[d.target.id][d.source.id].toFixed(3);
                       return `[${d.source.id} → ${d.target.id}: ${rateSourceToTarget}] [${d.target.id} → ${d.source.id}: ${rateTargetToSource}]`;
                     });
             })
