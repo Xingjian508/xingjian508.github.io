@@ -14,11 +14,11 @@ const nodesData = [
 ];
 
 const links = [];
-for (let i = 0; i < nodesData.length; i++) {
-    for (let j = i + 1; j < nodesData.length; j++) {
-        links.push({ source: nodesData[i].id, target: nodesData[j].id });
-    }
-}
+// for (let i = 0; i < nodesData.length; i++) {
+//     for (let j = i + 1; j < nodesData.length; j++) {
+//         links.push({ source: nodesData[i].id, target: nodesData[j].id });
+//     }
+// }
 
 
 
@@ -28,13 +28,12 @@ const fs = require('fs');
 const path = require('path');
 
 const ratesData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'rates.json')));
-const links = [];
 
-// nodesData.forEach(node1 => nodesData.forEach(node2 => {
-//   if (node1.id !== node2.id && ratesData[node1.id] && ratesData[node1.id][node2.id]) {
-//     links.push({ source: node1.id, target: node2.id, value: ratesData[node1.id][node2.id] });
-//   }
-// }));
+nodesData.forEach(node1 => nodesData.forEach(node2 => {
+  if (node1.id !== node2.id && ratesData[node1.id] && ratesData[node1.id][node2.id]) {
+    links.push({ source: node1.id, target: node2.id, value: ratesData[node1.id][node2.id] });
+  }
+}));
 
 console.log(links);
 
