@@ -10,7 +10,7 @@ const nodesData = [
     { id: 'CAD', size: node_size, text: 'CAD' },
     { id: 'CHF', size: node_size, text: 'CHF' },
     { id: 'SGD', size: node_size, text: 'SGD' },
-    { id: 'HKD', size: node_size, text: 'HKD' }
+//     { id: 'HKD', size: node_size, text: 'HKD' }
 ];
 
 const links = [];
@@ -21,7 +21,7 @@ const links = [];
 // }
 
 
-
+asdfasdfsa
 
 console.log("YO")
 const fs = require('fs');
