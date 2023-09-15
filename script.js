@@ -24,7 +24,7 @@ for (let i = 0; i < nodesData.length; i++) {
 
 
 console.log("YO")
-// const fs = require('fs');
+const fs = require('fs');
 // const path = require('path');
 // 
 // const ratesData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'rates.json')));
