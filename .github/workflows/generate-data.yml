@@ -2,16 +2,29 @@ name: Update Data
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Runs every minute
+    - cron: "* * * * *"
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check Out Repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run Python Script
-        run: python3 pysrc/main.py
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x  # Replace 'x' with the desired Python version
+
+      - name: Run Python script
+        run: python3 pysrc/main.py  # Adjust the path to your main.py file
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "Xingjian508"
+          git config --global user.email "xingjiw4@uci.edu"
+          git add .
+          git commit -m "Update Data"
+          git push
 
