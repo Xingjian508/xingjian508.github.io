@@ -31,7 +31,28 @@ def get_base_rates(base):
   return convert_to_rates(forex_data)
 
 
+def get_rates_single(currencies):
+  """Get real time rates from USD."""
+  rates = dict()
+  rates['USD'] = get_base_rates('USD')
+  
+  selected_rates = dict()
+  for from_currency in currencies:
+    selected_rates[from_currency] = dict()
+    for to_currency in currencies:
+      if from_currency != to_currency:
+        if from_currency == 'USD':
+          selected_rates[from_currency][to_currency] = rates[from_currency][to_currency]
+        elif to_currency == 'USD':
+          selected_rates[from_currency][to_currency] = 1/rates[to_currency][from_currency]
+        else:
+          selected_rates[from_currency][to_currency] = rates['USD'][to_currency] / rates['USD'][from_currency]
+  return selected_rates
+
+
+
 def get_rates_simul(currencies):
+  """Get simulated rates."""
   data = json.loads(simulated_data())['rates']
   rates = dict()
   for base in currencies:
@@ -54,7 +75,7 @@ def get_rates_simul(currencies):
   return selected_rates
 
 
-def get_rates(currencies, SIMUL=True):
+def get_rates(currencies):
   """Returns a nested dictionary of exchange rates for specific currencies."""
   rates = dict()
   for base in currencies:

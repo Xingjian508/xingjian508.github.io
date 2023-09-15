@@ -1,5 +1,6 @@
-from data_extraction import get_rates_simul
+from data_extraction import get_rates_single
 from forex_graph import Graph
+import json
 
 
 def display_arbitrage(arbitrage_opportunities):
@@ -15,8 +16,8 @@ def display_arbitrage(arbitrage_opportunities):
 
 def print_out(G: Graph):
   """Prints the graph data onto a file."""
-  with open('data/rates.txt', 'w') as f:
-    f.write(str(G.rates))
+  with open('data/rates.json', 'w') as f:
+    f.write(json.dumps(G.rates))
 
 
 if __name__ == '__main__':
@@ -24,7 +25,7 @@ if __name__ == '__main__':
 
   # Setting up rates.
   currencies = ["USD", "EUR", "GBP", "JPY", "AUD", "CAD", "CHF", "CNY", "SEK", "NZD", "MXN", "SGD", "HKD", "NOK", "KRW", "TRY", "RUB", "INR", "BRL", "ZAR"]
-  rates_data = get_rates_simul(currencies)
+  rates_data = get_rates_single(currencies)
 
   # Creating a graph.
   exchange_rate_graph = Graph()
