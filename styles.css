@@ -1,72 +1,49 @@
+/* A deliberately plain academic homepage, inspired by the reference site. */
+html {
+  color-scheme: light;
+}
+
 body {
-    margin: 0;
-    overflow: hidden;
+  margin: 8px;
+  background: white;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  line-height: normal;
+  overflow-wrap: break-word;
 }
 
-#controls {
-    margin: 50px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 200px;
-    background-color: white;
-    z-index: 2;
+.contact {
+  margin: 1em 0;
 }
 
-#controls label {
-    margin-right: 10px;
+.contact h1 {
+  margin: 0;
+  font: inherit;
 }
 
-#graph-container {
-    position: absolute;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 0px);
-    margin: 0;
+a:link {
+  color: #0000ee;
 }
 
-.node {
-    fill: blue;
-    cursor: pointer;
-    stroke: none;
-    stroke-width: 2px;
+a:visited {
+  color: #551a8b;
 }
 
-.node:hover {
-    stroke: red;
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
 
-.link {
-    stroke: #ccc;
-    stroke-width: 2px;
-    fill: none;
-    pointer-events: stroke;
-    cursor: pointer;
+/* Supporting pages use small headings and the same browser-like spacing. */
+.subpage h1 {
+  font-size: 1.5rem;
 }
 
-.link:hover {
-    stroke: red;
+.subpage h2 {
+  font-size: 1.125rem;
 }
 
-.link-label {
-    font-size: 12px;
-    fill: black;
-    pointer-events: none;
-    visibility: hidden;
+.subpage section {
+  margin: 2em 0;
 }
-
-.edge-label {
-    font-size: 12px;
-    text-anchor: middle;
-    fill: black;
-    pointer-events: none;
-}
-
-.node-text {
-    font-size: 12px;
-    text-anchor: middle;
-    fill: white;
-    pointer-events: none;
-}
-
