@@ -3,16 +3,15 @@
 A plain, static academic homepage using Marc A. Rieffel's Berkeley homepage
 (https://math.berkeley.edu/~rieffel/) as a layout reference. The template keeps
 the white background, serif text, blue links, contact block, and simple lists
-of academic work. All bracketed text is a placeholder, not a biographical claim.
+of academic work. The homepage contains Xingjian's introduction and reading list.
 
 ## Personalize
 
-- Edit `index.html` to add your affiliation, contact information, introduction,
-  research interests, papers, and notes. Delete sections you do not need.
-- Replace the bracketed text in `teaching/index.html`, `papers/index.html`, and
-  `notes/index.html`, or link the homepage titles directly to your PDFs instead.
-- Put your documents in `papers/` or `notes/` and use relative links so the site
-  works on GitHub Pages and other static hosts.
+- Edit `index.html` to update your introduction or add articles to the reading list.
+- Add sections for research, papers, or notes when you have content to share.
+- Use relative links for local documents so the site works on GitHub Pages and
+  other static hosts. Add any new asset directories to `tools/build.py` so they
+  are also included in the private Sites preview.
 - `styles.css` contains the minimal shared styling. No JavaScript or external
   fonts are required by the homepage.
 

@@ -8,7 +8,7 @@ output = root / "dist"
 if output.exists():
     shutil.rmtree(output)
 output.mkdir()
-for name in ("index.html", "styles.css", ".nojekyll", "teaching", "papers", "notes", "experiments"):
+for name in ("index.html", "styles.css", ".nojekyll", "experiments"):
     source = root / name
     destination = output / name
     if source.is_dir():
