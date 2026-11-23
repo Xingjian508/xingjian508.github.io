@@ -15,12 +15,6 @@ of academic work. The homepage contains Xingjian's introduction and reading list
 - `styles.css` contains the minimal shared styling. No JavaScript or external
   fonts are required by the homepage.
 
-## Original project
-
-The existing Forex Graph is preserved at `experiments/forex/`. Its exchange
-rates are a historical repository snapshot, not live financial data. The
-original Python tools and root data file are retained as well.
-
 ## Preview and build
 
 Run `python3 -m http.server 8000` in this directory, then open
